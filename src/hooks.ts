@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react'
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 
 import type { AppDispatch, AppState } from './store/store'
+import React from 'react'
 
 export const useForm = <TContent>(defaultValues: TContent) => (handler: (content: TContent) => void) =>
   async (event: ChangeEvent<HTMLFormElement>) => {
@@ -44,3 +45,9 @@ export const useInterval = (callback: Function, delay: number) => {
 export const useAppDispatch = () => useDispatch<AppDispatch>()
 
 export const useAppSelector: TypedUseSelectorHook<AppState> = useSelector
+
+interface IContext {
+  theme: string,
+  setTheme: Function
+}
+export const MyContext = React.createContext({ theme: 'light', setTheme: function () { } } as IContext)
