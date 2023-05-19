@@ -1,7 +1,7 @@
 import { configureStore, ThunkAction, Action, combineReducers } from '@reduxjs/toolkit'
 
 import searchCityReducer from '../store/searchSlice'
-import createSagaMiddleware from 'Redux-Saga'
+import createSagaMiddleware from 'redux-saga'
 import saga from '../store/sagas/saga'
 let sagaMiddleware = createSagaMiddleware()
 const middleware = [sagaMiddleware]
